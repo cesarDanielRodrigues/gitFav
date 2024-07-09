@@ -1,0 +1,211 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+:root {
+    font-size: 62.5%;
+    /* Body */
+    --body-background: #000;
+    --font_family-all: "Roboto", sans-serif;
+    /* Header */
+    --input-background: #06181C;
+    --buttonSearch-background: #065E7C;
+    --buttonSearchHover-background: #FFF;
+    --input-fontColor: #FFF;
+    --placehorder-fontColor: #7C7C8A;
+    --buttonSearch-fontColor: #FFF;
+    --buttonSearchHover-fontColor: #065E7C;
+    /* Table */
+    --tableBorder-color: #4A808C;
+    --scroll-color: #4A808C;
+    /* Table head */
+    --thead-background: #092D38;
+    --th-fontColor: #E1E1E6;
+    /* Table body */
+    --td_rowOdd-background: rgba(6, 22, 27, 0.50);
+    --td_rowEven-background: #06181C;
+    --td-fontColor: #E1E1E6;
+    --td_button-fontColor: #F75A68;
+    --td_buttonHover-fontColor: #f70418;
+
+}
+
+body {
+    background: var(--body-background);
+    overflow: hidden;
+}
+
+body,
+input,
+button {
+    font-family: var(--font_family-all);
+}
+
+#app {
+    max-width: 80vw;
+    max-height: 80vh;
+    margin: 11.5rem auto;
+    position: relative;
+}
+
+header {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 8.7rem
+}
+
+header .search {
+    display: flex;
+    gap: .8rem;
+}
+
+header .search input {
+    background: var(--input-background);
+    color: var(--input-fontColor);
+    border: none;
+    border-radius: .5rem;
+    padding: 1.6rem;
+    width: 40.0rem;
+    font-weight: 400;
+    font-size: 1.6rem;
+    font-weight: 1.6rem;
+}
+
+header .search input::placeholder {
+    color: var(--placehorder-fontColor)
+}
+
+header .search button {
+    background: var(--buttonSearch-background);
+    color: var(--buttonSearch-fontColor);
+    border: none;
+    border-radius: .5rem;
+    display: flex;
+    align-items: center;
+    gap: .8rem;
+    padding: 1.2rem 3.2rem;
+    font-size: 1.4rem;
+    font-weight: 700;
+    text-transform: uppercase;
+    transition: background 500ms, color 300ms;
+}
+
+header .search button:hover {
+    color: var(--buttonSearchHover-fontColor);
+    background: var(--buttonSearchHover-background);
+    transition: background 500ms, color 300ms;
+}
+
+.tb {
+    z-index: 1;
+    width: 100%;
+    border: 0.1rem solid var(--tableBorder-color);
+    border-radius: 1.2rem;
+    position: absolute;
+    overflow: hidden;
+}
+
+
+::-webkit-scrollbar {
+    width: 6px;
+    background: transparent;
+}
+
+::-webkit-scrollbar-track {
+    background-color: transparent;
+}
+
+::-webkit-scrollbar-thumb {
+    background-color: var(--scroll-color);
+    border-radius: 1.2rem;
+}
+
+
+tbody{
+    width: 100%;
+    max-height: 45vh;
+    display: block;
+    overflow-y: overlay;
+    overflow-x: hidden;
+}
+
+thead,tbody tr{
+    table-layout: fixed;
+    width: 100%;
+    display: table;
+}
+
+table thead {
+    background: var(--thead-background);
+}
+
+table thead th,
+table tbody td {
+    padding: 1.6rem 2.4rem 1.6rem 4.0rem;
+}
+
+table thead th {
+    top: 0;
+    color: var(--th-fontColor);
+    font-size: 1.6rem;
+    font-weight: 700;
+    line-height: 3.2rem;
+    text-align: start;
+}
+
+
+table tbody tr {
+    background: var(--td_rowEven-background);
+}
+
+table tbody tr:nth-child(odd) {
+    background: var(--td_rowOdd-background);
+}
+
+table tbody td,
+table tbody td.user a,
+table tbody td.action button {
+    color: var(--td-fontColor);
+    font-size: 1.6rem;
+    font-weight: 700;
+}
+
+table tbody td {
+    text-align: start;
+}
+
+table tbody td.user {
+    display: flex;
+    align-items: center;
+    gap: 1.6rem;
+}
+
+.user img {
+    width: 56px;
+    height: 56px;
+    border-radius: 50%;
+}
+
+table tbody td.user a {
+    text-decoration: none;
+}
+
+table tbody a span {
+    margin-top: .8rem;
+    font-weight: 400;
+}
+
+table tbody td.action button {
+    color: var(--td_button-fontColor);
+    background: transparent;
+    border: none;
+    transition: color 100ms;
+}
+
+table tbody td.action button:hover {
+    color: var(--td_buttonHover-fontColor);
+    text-decoration: underline;
+    transition: color 200ms;
+}
