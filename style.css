@@ -29,6 +29,10 @@
     --td-fontColor: #E1E1E6;
     --td_button-fontColor: #F75A68;
     --td_buttonHover-fontColor: #f70418;
+    /* Empty */
+    --empty-background:#030B0D;
+    --empty-font_family:"Roboto Mono", monospace;
+    --empty-fontColor:#4E5455;
 
 }
 
@@ -137,7 +141,6 @@ thead,tbody tr{
     table-layout: fixed;    
     display: table;
     width: 100%;
-
 }
 
 table thead {
@@ -211,4 +214,22 @@ table tbody td.action button:hover {
     color: var(--td_buttonHover-fontColor);
     text-decoration: underline;
     transition: color 200ms;
+}
+
+.empty {
+    width: 100%;
+    height: 50vh;
+    background-color: var(--empty-background);
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 5.0rem;
+
+}
+.empty p{
+    color: var(--empty-fontColor);
+    font-family: var(--empty-font_family);
+    font-size: 4.0rem;
+    font-weight: 700;
+    line-height: 2.5rem;
 }
